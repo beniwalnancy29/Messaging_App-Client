@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #e8ecf2;
+    color: #334155;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .dark body {
+    background-color: #0f1217;
+    color: #e2e8f0;
+  }
+}
+
+/* Light Mode Neumorphism */
+.neu-inset {
+  box-shadow: inset 3px 3px 6px rgba(166, 178, 196, 0.45), inset -3px -3px 6px rgba(255, 255, 255, 0.95);
+}
+
+.neu-card {
+  background: #eef2f6;
+  box-shadow: 8px 8px 18px rgba(166, 178, 196, 0.42), -8px -8px 18px rgba(255, 255, 255, 0.95);
+}
+
+.neu-button {
+  background: #eef2f6;
+  box-shadow: 4px 4px 10px rgba(166, 178, 196, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.95);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-button:active {
+  box-shadow: inset 2px 2px 5px rgba(166, 178, 196, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+  transform: translateY(1px);
+}
+
+/* Dark Mode Neumorphism */
+.dark .neu-inset {
+  background: #141720 !important;
+  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.65), inset -2px -2px 5px rgba(255, 255, 255, 0.04) !important;
+}
+
+.dark .neu-card {
+  background: #191d26 !important;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.55), -5px -5px 14px rgba(255, 255, 255, 0.035) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark .neu-button {
+  background: #191d26 !important;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.55), -3px -3px 8px rgba(255, 255, 255, 0.04) !important;
+  color: #cbd5e1 !important;
+}
+
+.dark .neu-button:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.7), inset -2px -2px 4px rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Eye Protection Mode: Warm amber blue-light filter */
+.eye-shield-active {
+  filter: sepia(0.28) hue-rotate(-8deg) saturate(0.92) brightness(0.98);
+  transition: filter 0.3s ease;
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
